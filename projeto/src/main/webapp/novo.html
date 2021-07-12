@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+<meta charset="utf-8">
+<title>Projetos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Criar um novo Projeto</h1>
+		<form name="frmProjeto" action="insert">
+		<table>
+			<tr>
+				<td><input type="text" name="nomeProjeto" placeholder="Nome Projeto"
+					class="Caixa1"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="situacao" placeholder="situacao"
+					class="Caixa2"></td>
+			</tr>
+		</table>
+		<input type="button" value="Adicionar projeto" class="Botao1"
+			onclick="validar()">
+	</form>
+	
+	<script src="scripts/validador.js"></script>
+</body>
+</html>
