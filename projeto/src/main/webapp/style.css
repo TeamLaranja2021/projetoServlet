@@ -12,18 +12,6 @@ h1 {
 	color: #66bbff;
 }
 
-.Botao1 {
-	text-decoration: none;
-	background-color: #66bbff;
-	padding: 5px 10px 5px 10px;
-	color: #fff;
-	font-size: 1.2em;
-	font-weight: 700;
-	border-radius: 5px;
-	border: 0;
-	cursor: pointer;
-}
-
 .Botao2 {
 	text-decoration: none;
 	background-color: #d51213;
@@ -71,4 +59,50 @@ h1 {
 #tabela td {
 	border: 1px solid #ddd;
 	padding: 10px;
+}
+
+
+/*-------------------------------------------*/
+/*projeto*/
+.Botao1 {
+	text-decoration: none;
+	background-color: #66bbff;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+}
+
+
+
+/*---------------------------------------------------------------*/
+/*usuario*/
+
+.botaoUser{
+	text-decoration: none;
+	background-color: #ffa500; 
+	padding: 5px 10px 5px 10px;
+	color:#fff;
+	font-size:1.2em;
+	font-weight:700;
+	borde: 0;
+	cursor: pointer;
+}
+
+
+/*------------------------------------------------------------------*/
+/*versao*/
+
+.botaoVersion{
+	text-decoration: none;
+	background-color: #00FF00; 
+	padding: 5px 10px 5px 10px;
+	color:#fff;
+	font-size:1.2em;
+	font-weight:700;
+	border: 0;
+	cursor: pointer;
 }

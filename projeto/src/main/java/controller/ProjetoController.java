@@ -13,19 +13,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
 
-import model.DAO;
-import model.JavaBeans;
+import DAO.ProjetoDAO;
+import model.Projeto;
 
 @WebServlet(urlPatterns = {"/Controller" , "/main", "/insert", "/select", "/update", "/delete"})
-public class Controller extends HttpServlet {
+public class ProjetoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    DAO dao = new DAO();
-    JavaBeans projeto = new JavaBeans();
-    public Controller() {
+	private static final Integer IdProjeto = null;
+    ProjetoDAO dao = new ProjetoDAO();
+    Projeto projeto = new Projeto();
+    public ProjetoController() {
         super();
       
     }
 
+    //Rotas
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String  action = request.getServletPath();
 		System.out.println(action);
@@ -42,13 +44,13 @@ public class Controller extends HttpServlet {
 		}else {
 			response.sendRedirect("index.html");
 		}
-		dao.testeConexao();
+	//	dao.testeConexao();
 	}
 	
 	// listar projetos
 	protected void projetos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//recebe os dados - objetos
-		ArrayList<JavaBeans> lista = dao.listarProjetos();
+		ArrayList<Projeto> lista = dao.listarProjetos();
 		
 		request.setAttribute("projeto", lista);
 		RequestDispatcher rd = request.getRequestDispatcher("listarProjeto.jsp");
@@ -71,10 +73,11 @@ public class Controller extends HttpServlet {
 	}
 	
 	
-	//editar proejto
+	//editar projeto
 	protected void listarprojeto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String IdProjeto = request.getParameter("idProjeto");
-		projeto.setIdProjeto(IdProjeto);
+		String idprojeto = request.getParameter("idProjeto");
+		
+		projeto.setIdProjeto(idprojeto);
 		
 		dao.selecionarProjeto(projeto);
 		

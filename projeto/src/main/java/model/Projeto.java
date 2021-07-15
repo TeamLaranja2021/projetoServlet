@@ -1,16 +1,16 @@
 package model;
 
-public class JavaBeans {
+public class Projeto {
 	private String idProjeto;
 	private String nomeProjeto;
 	private String situacao;
-	public JavaBeans(String idProjeto, String nomeProjeto, String situacao) {
+	public Projeto(String idProjeto, String nomeProjeto, String situacao) {
 		super();
 		this.idProjeto = idProjeto;
 		this.nomeProjeto = nomeProjeto;
 		this.situacao = situacao;
 	}
-	public JavaBeans() {
+	public Projeto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

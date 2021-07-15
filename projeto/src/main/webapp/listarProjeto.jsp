@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@ page import="model.JavaBeans"%>
+<%@ page import="model.Projeto"%>
 <%@ page import="java.util.ArrayList"%>
 <%
-	ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("projeto");
+	ArrayList<Projeto> lista = (ArrayList<Projeto>) request.getAttribute("projeto");
 %>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 </head>
 <body>
 	<h1>Listar Projetos</h1>
-	<a href="novo.html" class="Botao1">Criar novo projeto</a>
+	<a href="novoProjeto.html" class="Botao1">Criar novo projeto</a>
 	<table id="tabela">
 		<thead>
 			<tr>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+<meta charset="utf-8">
+<title>Projetos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Criar uma nova Versao para o projeto</h1>
+		<form name="frmVersao" action="insertVersao">
+		<table>
+			<tr>
+				<td><input type="text" name="projeto" placeholder="id do Projeto"
+					class="Caixa2"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="GMUD" placeholder="GMUD"
+					class="Caixa1"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="descricao" placeholder="descricao"
+					class="Caixa1"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="situacao" placeholder="situacao"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="dataLancamento" placeholder="data de Lancamento"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="ordem" placeholder="ordem"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="numeroVersao" placeholder="numero da Versao"
+					class="Caixa2"></td>
+			</tr>
+			
+		</table>
+		<input type="button" value="Adicionar projeto" class="Botao1"
+			onclick="validarVersao()">
+	</form>
+	
+	<script src="scripts/validador.js"></script>
+</body>
+</html>

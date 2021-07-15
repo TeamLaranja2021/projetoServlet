@@ -1,50 +1,22 @@
-package model;
+package DAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import model.Projeto;
+import util.ConnectionFactory;
 
-public class DAO {
-	//Modulo de conexao com o assesar
-	
-		private String driver = "com.mysql.cj.jdbc.Driver";
-		private String url = "jdbc:mysql://127.0.0.1:3306/projeto_documentacao?useTimezone=true&serverTimezone=UTC";
-		private String user = "root";
-		private String password = "rot";
-		
-	//metodo de conexao
-		private Connection conectar() {
-			Connection con = null;
-			try {
-				Class.forName(driver);
-				con = DriverManager.getConnection(url, user, password);
-				return con ;
-			} catch (Exception e) {
-				System.out.println(e);
-				return null;
-			}
-		}
-		
-		//teste de conexao
-		public void testeConexao() {
-			try {
-				Connection con = conectar();
-				System.out.println(con);
-				con.close();
-			} catch (Exception e) {
-				System.out.println(e);
-			}
-		}
-		
+
+public class ProjetoDAO {
+
 		//create Projeto
-		public void inserirProjeto(JavaBeans projeto) {
+		public void inserirProjeto(Projeto projeto) {
 			String createProjeto = "insert into projeto(nomeProjeto, situacao) values(? ,?)";
 			try {
 				//abrir conexao
-				Connection con = conectar();
+				Connection con =  ConnectionFactory.getConectar();
 				//Prepar a query no banco de dados
 				PreparedStatement pst = con.prepareStatement(createProjeto);
 				//subtituir os paramentos (?) pelas variaveis
@@ -61,13 +33,13 @@ public class DAO {
 			}
 		}
 		
-		//READ de Projeto
-		public ArrayList<JavaBeans> listarProjetos() {
-			ArrayList<JavaBeans> projeto = new ArrayList<>();
+		//READ listar todas os  Projeto
+		public ArrayList<Projeto> listarProjetos() {
+			ArrayList<Projeto> projeto = new ArrayList<>();
 			String read = "select * from projeto";
 			try {
 				//abrir conexao
-				Connection con = conectar();
+				Connection con =  ConnectionFactory.getConectar();
 				//Prepar a query no banco de dados - ler read
 				PreparedStatement pst = con.prepareStatement(read);
 				//executa a query read
@@ -79,7 +51,7 @@ public class DAO {
 					String nomeProjeto = rs.getString(2);
 					String situacao = rs.getString(3);
 					
-					projeto.add(new JavaBeans(IdProjeto, nomeProjeto, situacao));
+					projeto.add(new Projeto(IdProjeto, nomeProjeto, situacao));
 				}
 
 				//fecha conexao
@@ -92,12 +64,12 @@ public class DAO {
 			}
 		}
 		
-		//UPDATE
-		public void selecionarProjeto(JavaBeans projeto) {
+		//selecionar projeto pelo id
+		public void selecionarProjeto(Projeto projeto) {
 			//query
 			String read2 = "select * from projeto where idProjeto =?";
 			try {
-				Connection con = conectar();
+				Connection con =  ConnectionFactory.getConectar();
 				PreparedStatement pst = con.prepareStatement(read2);
 				pst.setString(1, projeto.getIdProjeto());
 				ResultSet rs = pst.executeQuery();
@@ -117,10 +89,10 @@ public class DAO {
 		}
 		
 		//editar o projeto
-		public void altearProjeto(JavaBeans projeto) {
+		public void altearProjeto(Projeto projeto) {
 			String create = "update projeto set nomeProjeto=?, situacao=? where idProjeto=? ";
 			try {
-				Connection con = conectar();
+				Connection con =  ConnectionFactory.getConectar();
 				PreparedStatement pst = con.prepareStatement(create);
 				pst.setString(1, projeto.getNomeProjeto());
 				pst.setString(2, projeto.getSituacao());
@@ -137,10 +109,10 @@ public class DAO {
 		}
 		
 		//delete
-		public void deletarProjeto(JavaBeans projeto) {
+		public void deletarProjeto(Projeto projeto) {
 			String delete = "delete from projeto where idProjeto=?";
 			try {
-				Connection con = conectar();
+				Connection con =  ConnectionFactory.getConectar();
 				PreparedStatement pst = con.prepareStatement(delete);
 				pst.setString(1, projeto.getIdProjeto());
 				pst.executeUpdate(); //excuta query
