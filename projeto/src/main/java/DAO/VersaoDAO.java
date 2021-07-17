@@ -27,7 +27,7 @@ public class VersaoDAO {
 					pst.setString(2, versao.getGMUD());
 					pst.setString(3, versao.getDescricao());
 					pst.setString(4, versao.getSituacao());
-					pst.setString(5, versao.getDataLancamento());
+					pst.setDate(5, versao.getDataLancamento());
 					pst.setString(6, versao.getOrdem());
 					pst.setString(7, versao.getNumeroVersao());
 					//excutar a query
@@ -55,12 +55,12 @@ public class VersaoDAO {
 					
 					//laco de projeto
 					while(rs.next()) {
-						String IdVersao = rs.getString(1);
-						Integer projeto = rs.getInt(2);
+						int IdVersao = rs.getInt(1);
+						int projeto = rs.getInt(2);
 						String GMUD = rs.getString(3);
 						String descricao = rs.getString(4);
 						String situacao = rs.getString(5);
-						String dataLancamento = rs.getString(6);
+						Date dataLancamento = rs.getDate(6);
 						String ordem = rs.getString(7);
 						String numeroVersao = rs.getString(8);	
 						versao.add(new Versao(IdVersao, projeto, GMUD, descricao, situacao, dataLancamento, ordem, numeroVersao));
@@ -85,15 +85,15 @@ public class VersaoDAO {
 					Connection con =  ConnectionFactory.getConectar();
 					
 					PreparedStatement pst = con.prepareStatement(read2);
-					pst.setString(1, versao.getIdVersao());
+					pst.setInt(1, versao.getIdVersao());
 					ResultSet rs = pst.executeQuery();
 					while(rs.next()) {
-						versao.setIdVersao(rs.getString(1));
+						versao.setIdVersao(rs.getInt(1));
 						versao.setProjeto(rs.getInt(2));
 						versao.setGMUD(rs.getString(3));
 						versao.setDescricao(rs.getString(4));
 						versao.setSituacao(rs.getString(5));
-						versao.setDataLancamento(rs.getString(6));
+						versao.setDataLancamento(rs.getDate(6));
 						versao.setOrdem(rs.getString(7));
 						versao.setNumeroVersao(rs.getString(8));
 					}
@@ -121,10 +121,10 @@ public class VersaoDAO {
 					pst.setString(2, versao.getGMUD());
 					pst.setString(3, versao.getDescricao());
 					pst.setString(4, versao.getSituacao());
-					pst.setString(5, versao.getDataLancamento());
+					pst.setDate(5, versao.getDataLancamento());
 					pst.setString(6, versao.getOrdem());
 					pst.setString(7, versao.getNumeroVersao());
-					pst.setString(8, versao.getIdVersao());
+					pst.setInt(8, versao.getIdVersao());
 					pst.executeUpdate();
 				
 					//fecha conexao
@@ -143,7 +143,7 @@ public class VersaoDAO {
 					Connection con =  ConnectionFactory.getConectar();
 					
 					PreparedStatement pst = con.prepareStatement(delete);
-					pst.setString(1, versao.getIdVersao());
+					pst.setInt(1, versao.getIdVersao());
 					pst.executeUpdate(); //excuta query
 					//fecha conexao
 					con.close();

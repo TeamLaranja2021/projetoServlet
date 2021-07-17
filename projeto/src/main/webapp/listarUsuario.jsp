@@ -41,8 +41,8 @@
 					<a href="selectUser?idUsuario=<%=lista.get(i).getIdUsuario()%>"
 					class="Botao1">Editar</a>
 					
-					<a href="javascript: confirmarUser(<%=lista.get(i).getIdUsuario()%>)"
-					class="Botao2">Excluir</a>
+				<!--  	<a href="javascript: confirmarUser(<%=lista.get(i).getIdUsuario()%>)"
+					class="Botao2">Excluir</a> -->
 					
 				</td>
 			</tr>

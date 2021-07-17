@@ -1,23 +1,13 @@
 package model;
 
 public class Projeto {
-	private String idProjeto;
+	private int idProjeto;
 	private String nomeProjeto;
-	private String situacao;
-	public Projeto(String idProjeto, String nomeProjeto, String situacao) {
-		super();
-		this.idProjeto = idProjeto;
-		this.nomeProjeto = nomeProjeto;
-		this.situacao = situacao;
-	}
-	public Projeto() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public String getIdProjeto() {
+	private boolean situacao;
+	public int getIdProjeto() {
 		return idProjeto;
 	}
-	public void setIdProjeto(String idProjeto) {
+	public void setIdProjeto(int idProjeto) {
 		this.idProjeto = idProjeto;
 	}
 	public String getNomeProjeto() {
@@ -26,11 +16,23 @@ public class Projeto {
 	public void setNomeProjeto(String nomeProjeto) {
 		this.nomeProjeto = nomeProjeto;
 	}
-	public String getSituacao() {
+
+	public boolean isSituacao() {
 		return situacao;
 	}
-	public void setSituacao(String situacao) {
+	
+	public void setSituacao(boolean situacao) {
 		this.situacao = situacao;
+	}
+	public Projeto(int idProjeto, String nomeProjeto, boolean situacao) {
+		super();
+		this.idProjeto = idProjeto;
+		this.nomeProjeto = nomeProjeto;
+		this.situacao = situacao;
+	}
+	public Projeto() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	

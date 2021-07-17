@@ -21,7 +21,7 @@ public class ProjetoDAO {
 				PreparedStatement pst = con.prepareStatement(createProjeto);
 				//subtituir os paramentos (?) pelas variaveis
 				pst.setString(1, projeto.getNomeProjeto());
-				pst.setString(2, projeto.getSituacao());
+				pst.setBoolean(2, projeto.isSituacao());
 				
 				//excutar a query
 				pst.executeUpdate();
@@ -47,9 +47,9 @@ public class ProjetoDAO {
 				
 				//laco de projeto
 				while(rs.next()) {
-					String IdProjeto = rs.getString(1);
+					int IdProjeto = rs.getInt(1);
 					String nomeProjeto = rs.getString(2);
-					String situacao = rs.getString(3);
+					Boolean situacao = rs.getBoolean(3);
 					
 					projeto.add(new Projeto(IdProjeto, nomeProjeto, situacao));
 				}
@@ -71,12 +71,12 @@ public class ProjetoDAO {
 			try {
 				Connection con =  ConnectionFactory.getConectar();
 				PreparedStatement pst = con.prepareStatement(read2);
-				pst.setString(1, projeto.getIdProjeto());
+				pst.setInt(1, projeto.getIdProjeto());
 				ResultSet rs = pst.executeQuery();
 				while(rs.next()) {
-					projeto.setIdProjeto(rs.getString(1));
+					projeto.setIdProjeto(rs.getInt(1));
 					projeto.setNomeProjeto(rs.getString(2));
-					projeto.setSituacao(rs.getString(3));
+					projeto.setSituacao(rs.getBoolean(3));
 					
 				}
 
@@ -95,8 +95,8 @@ public class ProjetoDAO {
 				Connection con =  ConnectionFactory.getConectar();
 				PreparedStatement pst = con.prepareStatement(create);
 				pst.setString(1, projeto.getNomeProjeto());
-				pst.setString(2, projeto.getSituacao());
-				pst.setString(3, projeto.getIdProjeto());
+				pst.setBoolean(2, projeto.isSituacao());
+				pst.setInt(3, projeto.getIdProjeto());
 				pst.executeUpdate();
 			
 		
@@ -114,7 +114,7 @@ public class ProjetoDAO {
 			try {
 				Connection con =  ConnectionFactory.getConectar();
 				PreparedStatement pst = con.prepareStatement(delete);
-				pst.setString(1, projeto.getIdProjeto());
+				pst.setInt(1, projeto.getIdProjeto());
 				pst.executeUpdate(); //excuta query
 				//fecha conexao
 				con.close();

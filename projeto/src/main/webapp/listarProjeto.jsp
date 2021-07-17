@@ -32,7 +32,7 @@
 			<tr>
 				<td><%=lista.get(i).getIdProjeto()%></td>
 				<td><%=lista.get(i).getNomeProjeto()%></td>
-				<td><%=lista.get(i).getSituacao()%></td>
+				<td><%=lista.get(i).isSituacao()%></td>
 				<td>
 					<a href="select?idProjeto=<%=lista.get(i).getIdProjeto()%>"
 					class="Botao1">Editar</a>

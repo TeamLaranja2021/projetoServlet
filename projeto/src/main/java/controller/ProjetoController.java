@@ -63,7 +63,7 @@ public class ProjetoController extends HttpServlet {
 	protected void novoProjeto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//setar as variaves javabens
 		projeto.setNomeProjeto(request.getParameter("nomeProjeto"));
-		projeto.setSituacao(request.getParameter("situacao"));
+		projeto.setSituacao(Boolean.parseBoolean(request.getParameter("situacao")));
 		
 		//invocar o metodo inserir projeto
 		dao.inserirProjeto(projeto);
@@ -75,7 +75,7 @@ public class ProjetoController extends HttpServlet {
 	
 	//editar projeto
 	protected void listarprojeto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String idprojeto = request.getParameter("idProjeto");
+		int idprojeto = Integer.parseInt(request.getParameter("idProjeto"));
 		
 		projeto.setIdProjeto(idprojeto);
 		
@@ -83,16 +83,16 @@ public class ProjetoController extends HttpServlet {
 		
 		request.setAttribute("idProjeto", projeto.getIdProjeto());
 		request.setAttribute("nomeProjeto", projeto.getNomeProjeto());
-		request.setAttribute("situacao", projeto.getSituacao());
+		request.setAttribute("situacao", projeto.isSituacao());
 	
 		RequestDispatcher rd = request.getRequestDispatcher("EditarProjeto.jsp");
 		rd.forward(request, response);
 	}
 	
 	protected void editarProjeto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		projeto.setIdProjeto(request.getParameter("idProjeto"));
+		projeto.setIdProjeto(Integer.parseInt(request.getParameter("idProjeto")));
 		projeto.setNomeProjeto(request.getParameter("nomeProjeto"));
-		projeto.setSituacao(request.getParameter("situacao"));
+		projeto.setSituacao(Boolean.parseBoolean(request.getParameter("situacao")));
 		
 		dao.altearProjeto(projeto);
 		
@@ -101,7 +101,7 @@ public class ProjetoController extends HttpServlet {
 	
 	//remover projeto
 	protected void removerProjeto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			String idprojeto = request.getParameter("idProjeto");
+			int idprojeto = Integer.parseInt(request.getParameter("idProjeto"));
 			
 			projeto.setIdProjeto(idprojeto);
 			

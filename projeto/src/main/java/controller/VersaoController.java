@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -58,11 +59,11 @@ public class VersaoController extends HttpServlet {
 	
 	private void novaVersao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 		//setar as variaves javabens
-		versao.setProjeto(request.getIntHeader("projeto"));
+		versao.setProjeto(Integer.parseInt(request.getParameter("projeto")));
 		versao.setGMUD(request.getParameter("GMUD"));
 		versao.setDescricao(request.getParameter("descricao"));
 		versao.setSituacao(request.getParameter("situacao"));
-		versao.setDataLancamento(request.getParameter("dataLancamento"));
+		versao.setDataLancamento(Date.valueOf(request.getParameter("DataLancamento")));
 		versao.setOrdem(request.getParameter("ordem"));
 		versao.setNumeroVersao(request.getParameter("numeroVersao"));
 		
@@ -77,7 +78,8 @@ public class VersaoController extends HttpServlet {
 	
 	//editar versao pelo id
 	protected void listarVersao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String IdVersao = request.getParameter("idVersao");
+		int IdVersao = Integer.parseInt(request.getParameter("idVersao"));
+		//int projeto = Integer.parseInt(request.getParameter("projeto"));
 		versao.setIdVersao(IdVersao);
 		
 		versaodao.selecionarVersao(versao);
@@ -97,12 +99,12 @@ public class VersaoController extends HttpServlet {
 	
 	
 	protected void editarVersao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		versao.setIdVersao(request.getParameter("idVersao"));
-		versao.setProjeto(request.getIntHeader("projeto"));
+		versao.setIdVersao(Integer.parseInt(request.getParameter("idVersao")));
+		versao.setIdVersao(Integer.parseInt(request.getParameter("projeto")));
 		versao.setGMUD(request.getParameter("GMUD"));
 		versao.setDescricao(request.getParameter("descricao"));
 		versao.setSituacao(request.getParameter("situacao"));
-		versao.setDataLancamento(request.getParameter("dataLancamento"));
+		versao.setDataLancamento(Date.valueOf(request.getParameter("DataLancamento")));
 		versao.setOrdem(request.getParameter("ordem"));
 		versao.setNumeroVersao(request.getParameter("numeroVersao"));
 		
@@ -114,7 +116,7 @@ public class VersaoController extends HttpServlet {
 
 	//remover versao
 	protected void deletarVersao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			String idversao = request.getParameter("idVersao");
+		int idversao = Integer.parseInt(request.getParameter("idversao"));	
 			
 			versao.setIdVersao(idversao);
 			

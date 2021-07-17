@@ -54,7 +54,7 @@ public class UsuarioDAO {
 			
 			//laco de projeto
 			while(rs.next()) {
-				String idUsuario= rs.getString(1);
+				int idUsuario= rs.getInt(1);
 				String nome = rs.getString(2);
 				String email = rs.getString(3);
 				String senha  = rs.getString(4);
@@ -82,10 +82,10 @@ public class UsuarioDAO {
 			Connection con =  ConnectionFactory.getConectar();
 			
 			PreparedStatement pst = con.prepareStatement(read2);
-			pst.setString(1, usuario.getIdUsuario());
+			pst.setInt(1, usuario.getIdUsuario());
 			ResultSet rs = pst.executeQuery();
 			while(rs.next()) {
-				usuario.setIdUsuario(rs.getString(1));
+				usuario.setIdUsuario(rs.getInt(1));
 				usuario.setNome(rs.getString(2));
 				usuario.setSenha(rs.getString(3));
 				usuario.setEmail(rs.getString(4));
@@ -114,7 +114,7 @@ public class UsuarioDAO {
 			pst.setString(2, usuario.getSenha());
 			pst.setString(3, usuario.getEmail());
 			pst.setString(4, usuario.getCargo());
-			pst.setString(5, usuario.getIdUsuario());
+			pst.setInt(5, usuario.getIdUsuario());
 			pst.executeUpdate();
 		
 			//fecha conexao
@@ -131,9 +131,8 @@ public class UsuarioDAO {
 		try {
 			//abrir conexao
 			Connection con =  ConnectionFactory.getConectar();
-			
 			PreparedStatement pst = con.prepareStatement(delete);
-			pst.setString(1, usuario.getIdUsuario());
+			pst.setInt(1, usuario.getIdUsuario());
 			pst.executeUpdate(); //excuta query
 			//fecha conexao
 			con.close();

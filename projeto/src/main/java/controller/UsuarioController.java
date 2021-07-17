@@ -73,7 +73,7 @@ public class UsuarioController extends HttpServlet {
 	
 	//editar usuario pelo id
 	protected void listarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String IdUsuario = request.getParameter("idUsuario");
+		int IdUsuario = Integer.parseInt(request.getParameter("idUsuario"));
 		usuario.setIdUsuario(IdUsuario);
 		
 		usuariodao.selecionarUsuario(usuario);
@@ -89,7 +89,8 @@ public class UsuarioController extends HttpServlet {
 	}
 	
 	protected void editarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		usuario.setIdUsuario(request.getParameter("idUsuario"));
+		usuario.setIdUsuario(Integer.parseInt(request.getParameter("idUsuario")));
+		
 		usuario.setNome(request.getParameter("nome"));
 		usuario.setSenha(request.getParameter("senha"));
 		usuario.setEmail(request.getParameter("email"));
@@ -103,7 +104,7 @@ public class UsuarioController extends HttpServlet {
 	
 	//remover usuario
 	protected void deletarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			String idusuario = request.getParameter("idUsuario");
+			int idusuario = Integer.parseInt(request.getParameter("idusuario"));
 			
 			usuario.setIdUsuario(idusuario);
 			
