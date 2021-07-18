@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -59,11 +61,12 @@ public class VersaoController extends HttpServlet {
 	
 	private void novaVersao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 		//setar as variaves javabens
-		versao.setProjeto(Integer.parseInt(request.getParameter("projeto")));
+		versao.setIdProjeto(Integer.parseInt(request.getParameter("idProjeto")));
 		versao.setGMUD(request.getParameter("GMUD"));
 		versao.setDescricao(request.getParameter("descricao"));
-		versao.setSituacao(request.getParameter("situacao"));
-		versao.setDataLancamento(Date.valueOf(request.getParameter("DataLancamento")));
+		versao.setSituacao(Boolean.parseBoolean(request.getParameter("situacao")));
+		versao.setDataLancamento(Date.valueOf(request.getParameter("dataLancamento")));
+		//versao.setDataLancamento(request.getParameter("dataLancamento"));
 		versao.setOrdem(request.getParameter("ordem"));
 		versao.setNumeroVersao(request.getParameter("numeroVersao"));
 		
@@ -85,10 +88,10 @@ public class VersaoController extends HttpServlet {
 		versaodao.selecionarVersao(versao);
 		
 		request.setAttribute("idVersao", versao.getIdVersao());
-		request.setAttribute("projeto", versao.getProjeto());
+		request.setAttribute("idProjeto", versao.getIdProjeto());
 		request.setAttribute("GMUD", versao.getGMUD());
 		request.setAttribute("descricao", versao.getDescricao());
-		request.setAttribute("situacao", versao.getSituacao());
+		request.setAttribute("situacao", versao.isSituacao());
 		request.setAttribute("dataLancamento", versao.getDataLancamento());
 		request.setAttribute("ordem", versao.getOrdem());
 		request.setAttribute("numeroVersao", versao.getNumeroVersao());
@@ -100,23 +103,24 @@ public class VersaoController extends HttpServlet {
 	
 	protected void editarVersao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		versao.setIdVersao(Integer.parseInt(request.getParameter("idVersao")));
-		versao.setIdVersao(Integer.parseInt(request.getParameter("projeto")));
+		versao.setIdVersao(Integer.parseInt(request.getParameter("idProjeto")));
 		versao.setGMUD(request.getParameter("GMUD"));
 		versao.setDescricao(request.getParameter("descricao"));
-		versao.setSituacao(request.getParameter("situacao"));
-		versao.setDataLancamento(Date.valueOf(request.getParameter("DataLancamento")));
+		versao.setSituacao(Boolean.parseBoolean(request.getParameter("situacao")));
+		versao.setDataLancamento(Date.valueOf(request.getParameter("dataLancamento")));
+		//versao.setDataLancamento(request.getParameter("dataLancamento"));
 		versao.setOrdem(request.getParameter("ordem"));
 		versao.setNumeroVersao(request.getParameter("numeroVersao"));
 		
 		//invocar o metodo inserir projeto
-		versaodao.alterarVersao(versao, null);
+		versaodao.alterarVersao(versao);
 		
 		response.sendRedirect("versao"); // redirecionar
 	}
 
 	//remover versao
 	protected void deletarVersao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idversao = Integer.parseInt(request.getParameter("idversao"));	
+		int idversao = Integer.parseInt(request.getParameter("idVersao"));	
 			
 			versao.setIdVersao(idversao);
 			

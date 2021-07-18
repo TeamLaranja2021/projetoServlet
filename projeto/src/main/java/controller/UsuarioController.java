@@ -104,7 +104,7 @@ public class UsuarioController extends HttpServlet {
 	
 	//remover usuario
 	protected void deletarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			int idusuario = Integer.parseInt(request.getParameter("idusuario"));
+			int idusuario = Integer.parseInt(request.getParameter("idUsuario"));
 			
 			usuario.setIdUsuario(idusuario);
 			

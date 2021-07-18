@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import model.Projeto;
@@ -14,20 +15,21 @@ import util.ConnectionFactory;
 
 public class VersaoDAO {
 
-	//create Projeto
+	//create versao
 			public void inserirVersao(Versao versao) {
-				String createVersao = "insert into versao (projeto , GMUD, descricao, situacao, dataLancamento,ordem, numeroVersao) values(?,?,?,?,?,?,?)";
+				String createVersao = "insert into versao (idprojeto , GMUD, descricao, situacao, dataLancamento,ordem, numeroVersao) values(?,?,?,?,?,?,?)";
 				try {
 					//abrir conexao
 					Connection con =  ConnectionFactory.getConectar();
 					//Prepar a query no banco de dados
 					PreparedStatement pst = con.prepareStatement(createVersao);
 					//subtituir os paramentos (?) pelas variaveis
-					pst.setInt(1, versao.getProjeto());
+					pst.setInt(1, versao.getIdProjeto());
 					pst.setString(2, versao.getGMUD());
 					pst.setString(3, versao.getDescricao());
-					pst.setString(4, versao.getSituacao());
-					pst.setDate(5, versao.getDataLancamento());
+					pst.setBoolean(4, versao.isSituacao());
+					pst.setDate(5, (Date) versao.getDataLancamento());
+					//pst.setString(5, versao.getDataLancamento());
 					pst.setString(6, versao.getOrdem());
 					pst.setString(7, versao.getNumeroVersao());
 					//excutar a query
@@ -41,7 +43,7 @@ public class VersaoDAO {
 			}
 			
 			
-			//READ listar todas os  Projeto
+			//READ listar todas as versoes 
 			public ArrayList<Versao> listarVersao() {
 				ArrayList<Versao> versao = new ArrayList<>();
 				String read = "select * from versao";
@@ -56,14 +58,14 @@ public class VersaoDAO {
 					//laco de projeto
 					while(rs.next()) {
 						int IdVersao = rs.getInt(1);
-						int projeto = rs.getInt(2);
+						int idProjeto = rs.getInt(2);
 						String GMUD = rs.getString(3);
 						String descricao = rs.getString(4);
-						String situacao = rs.getString(5);
+						Boolean situacao = rs.getBoolean(5);
 						Date dataLancamento = rs.getDate(6);
 						String ordem = rs.getString(7);
 						String numeroVersao = rs.getString(8);	
-						versao.add(new Versao(IdVersao, projeto, GMUD, descricao, situacao, dataLancamento, ordem, numeroVersao));
+						versao.add(new Versao(IdVersao, idProjeto, GMUD, descricao, situacao, dataLancamento, ordem, numeroVersao));
 					}
 
 					//fecha conexao
@@ -75,6 +77,8 @@ public class VersaoDAO {
 					return null;
 				}
 			}
+			
+			
 			
 			//selecionar versao pelo id
 			public void selecionarVersao(Versao versao) {
@@ -89,10 +93,10 @@ public class VersaoDAO {
 					ResultSet rs = pst.executeQuery();
 					while(rs.next()) {
 						versao.setIdVersao(rs.getInt(1));
-						versao.setProjeto(rs.getInt(2));
+						versao.setIdProjeto(rs.getInt(2));
 						versao.setGMUD(rs.getString(3));
 						versao.setDescricao(rs.getString(4));
-						versao.setSituacao(rs.getString(5));
+						versao.setSituacao(rs.getBoolean(5));
 						versao.setDataLancamento(rs.getDate(6));
 						versao.setOrdem(rs.getString(7));
 						versao.setNumeroVersao(rs.getString(8));
@@ -108,8 +112,8 @@ public class VersaoDAO {
 			
 			
 			//editar a versao
-			public void alterarVersao(Versao versao, Projeto projeto) {
-				String create = "update versao set projeto=?, GMUD=?, descricao=? , situacao=?, dataLancamento=? , ordem=?, numeroVersao=? where idVersao=? ";
+			public void alterarVersao(Versao versao) {
+				String create = "update versao set idprojeto=?, GMUD=?, descricao=? , situacao=?, dataLancamento=? , ordem=?, numeroVersao=? where idVersao=? ";
 				try {
 					//abrir conexao
 					Connection con =  ConnectionFactory.getConectar();
@@ -117,11 +121,12 @@ public class VersaoDAO {
 					PreparedStatement pst = con.prepareStatement(create);
 					
 					//pst.setString(0, projeto.getIdProjeto());
-					pst.setInt(1, versao.getProjeto());
+					pst.setInt(1, versao.getIdProjeto());
 					pst.setString(2, versao.getGMUD());
 					pst.setString(3, versao.getDescricao());
-					pst.setString(4, versao.getSituacao());
-					pst.setDate(5, versao.getDataLancamento());
+					pst.setBoolean(4, versao.isSituacao());
+					pst.setDate(5, (Date) versao.getDataLancamento());
+					//pst.setString(5, versao.getDataLancamento());
 					pst.setString(6, versao.getOrdem());
 					pst.setString(7, versao.getNumeroVersao());
 					pst.setInt(8, versao.getIdVersao());

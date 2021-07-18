@@ -16,8 +16,8 @@
 					value="<%out.print(request.getAttribute("idVersao"));%>"></td>
 			</tr> 
 			<tr>
-				<td><input type="text" name="projeto" class="Caixa1"
-					value="<%out.print(request.getIntHeader("projeto"));%>"></td>
+				<td><input type="text" name="idProjeto" class="Caixa1"
+					value="<%out.print(request.getAttribute("idProjeto"));%>"></td>
 			</tr>
 			<tr>
 				<td><input type="text" name="GMUD" class="Caixa2"

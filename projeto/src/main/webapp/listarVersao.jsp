@@ -36,10 +36,10 @@
 			%>
 			<tr>
 				<td><%=lista.get(i).getIdVersao()%></td>
-				<td><%=lista.get(i).getProjeto()%></td>
+				<td><%=lista.get(i).getIdProjeto()%></td>
 				<td><%=lista.get(i).getGMUD()%></td>
 				<td><%=lista.get(i).getDescricao()%></td>
-				<td><%=lista.get(i).getSituacao()%></td>
+				<td><%=lista.get(i).isSituacao()%></td>
 				<td><%=lista.get(i).getDataLancamento()%></td>
 				<td><%=lista.get(i).getOrdem()%></td>
 				<td><%=lista.get(i).getNumeroVersao()%></td>

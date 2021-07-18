@@ -1,28 +1,21 @@
 package model;
 
-import java.sql.Date;
-import java.text.DateFormat;
+
+
+import java.util.Date;
 
 public class Versao {
 	private int idVersao;
-	private int projeto;
+	private int idProjeto;
 	private String GMUD;
 	private String descricao;
-	private String situacao;
-	private Date DataLancamento;
+	private boolean situacao;
+	private Date dataLancamento;
 	private String ordem;
 	private String numeroVersao;
-	public Versao(int idVersao, int projeto, String gMUD, String descricao, String situacao, Date dataLancamento,
-			String ordem, String numeroVersao) {
+	public Versao() {
 		super();
-		this.idVersao = idVersao;
-		this.projeto = projeto;
-		GMUD = gMUD;
-		this.descricao = descricao;
-		this.situacao = situacao;
-		DataLancamento = dataLancamento;
-		this.ordem = ordem;
-		this.numeroVersao = numeroVersao;
+		// TODO Auto-generated constructor stub
 	}
 	public int getIdVersao() {
 		return idVersao;
@@ -30,11 +23,11 @@ public class Versao {
 	public void setIdVersao(int idVersao) {
 		this.idVersao = idVersao;
 	}
-	public int getProjeto() {
-		return projeto;
+	public int getIdProjeto() {
+		return idProjeto;
 	}
-	public void setProjeto(int projeto) {
-		this.projeto = projeto;
+	public void setIdProjeto(int idProjeto) {
+		this.idProjeto = idProjeto;
 	}
 	public String getGMUD() {
 		return GMUD;
@@ -48,17 +41,17 @@ public class Versao {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getSituacao() {
+	public boolean isSituacao() {
 		return situacao;
 	}
-	public void setSituacao(String situacao) {
+	public void setSituacao(boolean situacao) {
 		this.situacao = situacao;
 	}
 	public Date getDataLancamento() {
-		return DataLancamento;
+		return dataLancamento;
 	}
 	public void setDataLancamento(Date dataLancamento) {
-		DataLancamento = dataLancamento;
+		this.dataLancamento = dataLancamento;
 	}
 	public String getOrdem() {
 		return ordem;
@@ -72,11 +65,18 @@ public class Versao {
 	public void setNumeroVersao(String numeroVersao) {
 		this.numeroVersao = numeroVersao;
 	}
-	public Versao() {
+	public Versao(int idVersao, int idProjeto, String gMUD, String descricao, boolean situacao, Date dataLancamento,
+			String ordem, String numeroVersao) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.idVersao = idVersao;
+		this.idProjeto = idProjeto;
+		GMUD = gMUD;
+		this.descricao = descricao;
+		this.situacao = situacao;
+		this.dataLancamento = dataLancamento;
+		this.ordem = ordem;
+		this.numeroVersao = numeroVersao;
 	}
-
 	
 
 }
