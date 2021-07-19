@@ -79,10 +79,9 @@ public class VersaoController extends HttpServlet {
 		
 	}
 	
-	//editar versao pelo id
+	//listar versao pelo id
 	protected void listarVersao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int IdVersao = Integer.parseInt(request.getParameter("idVersao"));
-		//int projeto = Integer.parseInt(request.getParameter("projeto"));
 		versao.setIdVersao(IdVersao);
 		
 		versaodao.selecionarVersao(versao);

@@ -12,11 +12,11 @@
 	<form name="frmVersao" action="updateVersao">
 		<table>
 		<tr>
-				<td><input type="text" name="idVersao" id="caixa3" readonly
+				<td><input type="text" name="idVersao" class="Caixa2" readonly
 					value="<%out.print(request.getAttribute("idVersao"));%>"></td>
 			</tr> 
 			<tr>
-				<td><input type="text" name="idProjeto" class="Caixa1"
+				<td><input type="text" name="idProjeto" class="Caixa2"
 					value="<%out.print(request.getAttribute("idProjeto"));%>"></td>
 			</tr>
 			<tr>

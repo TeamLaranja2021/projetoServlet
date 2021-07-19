@@ -50,10 +50,41 @@ function validarUser() {
 
 
 
-
 //versao
 function validarVersao() {
 
 		document.forms["frmVersao"].submit()
 	
 }
+
+//tela
+function validarTela() {
+
+		document.forms["frmTela"].submit()
+	
+}
+
+
+//evento
+function validarEvento() {
+
+		document.forms["frmEvento"].submit()
+	
+}
+
+
+//Requisicao
+function validarRequisicao() {
+		document.forms["frmRequisicao"].submit()
+	
+}
+
+
+
+//Propriedade
+function validarPropriedade() {
+
+		document.forms["frmPropriedade"].submit()
+	
+}
+

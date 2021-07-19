@@ -106,3 +106,63 @@ h1 {
 	border: 0;
 	cursor: pointer;
 }
+
+
+
+/*------------------------------------------------------------------*/
+/*versao*/
+
+.botaoTela{
+	text-decoration: none;
+	background-color: #FF0000; 
+	padding: 5px 10px 5px 10px;
+	color:#fff;
+	font-size:1.2em;
+	font-weight:700;
+	border: 0;
+	cursor: pointer;
+}
+
+
+/*------------------------------------------------------------------*/
+.botaoEvento{
+	text-decoration: none;
+	background-color: #6C7B8B; 
+	padding: 5px 10px 5px 10px;
+	color:#fff;
+	font-size:1.2em;
+	font-weight:700;
+	border: 0;
+	cursor: pointer;
+}
+
+
+
+/*------------------------------------------------------------------*/
+/*requisicao*/
+.botaoRequisicao{
+	text-decoration: none;
+	background-color: #FF00FF; 
+	padding: 5px 10px 5px 10px;
+	color:#fff;
+	font-size:1.2em;
+	font-weight:700;
+	border: 0;
+	cursor: pointer;
+}
+
+
+
+
+/*------------------------------------------------------------------*/
+/*propriedade*/
+.botaoPropriedade{
+	text-decoration: none;
+	background-color: #FFD700; 
+	padding: 5px 10px 5px 10px;
+	color:#fff;
+	font-size:1.2em;
+	font-weight:700;
+	border: 0;
+	cursor: pointer;
+}

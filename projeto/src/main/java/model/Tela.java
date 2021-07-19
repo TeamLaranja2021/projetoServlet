@@ -1,72 +1,99 @@
 package model;
 
-import java.text.DateFormat;
+
+import java.util.Date;
 
 public class Tela {
-	private String idTela;
-	private String telaPai;
-	private DateFormat dataCadastro;
-	private String situacao;
-	private String urlLog;
-	private String versaoOriginal;
-	private String imagemTela;
+	private int idTela;
+	private int idVersao;
+	private Date dataCadastro;
+	private String nomeTela;
+	private String imagem;
+	private boolean situacao;
+	private int telaPai;
+	private int ordem;
+	private String urlog;
+	private int versaoOrigem;
 	public Tela() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Tela(String idTela, String telaPai, DateFormat dataCadastro, String situacao, String urlLog,
-			String versaoOriginal, String imagemTela) {
-		super();
-		this.idTela = idTela;
-		this.telaPai = telaPai;
-		this.dataCadastro = dataCadastro;
-		this.situacao = situacao;
-		this.urlLog = urlLog;
-		this.versaoOriginal = versaoOriginal;
-		this.imagemTela = imagemTela;
-	}
-	public String getIdTela() {
+	public int getIdTela() {
 		return idTela;
 	}
-	public void setIdTela(String idTela) {
+	public void setIdTela(int idTela) {
 		this.idTela = idTela;
 	}
-	public String getTelaPai() {
-		return telaPai;
+	public int getIdVersao() {
+		return idVersao;
 	}
-	public void setTelaPai(String telaPai) {
-		this.telaPai = telaPai;
+	public void setIdVersao(int idVersao) {
+		this.idVersao = idVersao;
 	}
-	public DateFormat getDataCadastro() {
+	public Date getDataCadastro() {
 		return dataCadastro;
 	}
-	public void setDataCadastro(DateFormat dataCadastro) {
+	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
-	public String getSituacao() {
+	public String getNomeTela() {
+		return nomeTela;
+	}
+	public void setNomeTela(String nomeTela) {
+		this.nomeTela = nomeTela;
+	}
+	public String getImagem() {
+		return imagem;
+	}
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+	public boolean isSituacao() {
 		return situacao;
 	}
-	public void setSituacao(String situacao) {
+	public void setSituacao(boolean situacao) {
 		this.situacao = situacao;
 	}
-	public String getUrlLog() {
-		return urlLog;
+	public int getTelaPai() {
+		return telaPai;
 	}
-	public void setUrlLog(String urlLog) {
-		this.urlLog = urlLog;
+	public void setTelaPai(int telaPai) {
+		this.telaPai = telaPai;
 	}
-	public String getVersaoOriginal() {
-		return versaoOriginal;
+	public int getOrdem() {
+		return ordem;
 	}
-	public void setVersaoOriginal(String versaoOriginal) {
-		this.versaoOriginal = versaoOriginal;
+	public void setOrdem(int ordem) {
+		this.ordem = ordem;
 	}
-	public String getImagemTela() {
-		return imagemTela;
+	public String getUrlog() {
+		return urlog;
 	}
-	public void setImagemTela(String imagemTela) {
-		this.imagemTela = imagemTela;
+	public void setUrlog(String urlog) {
+		this.urlog = urlog;
 	}
+	public int getVersaoOrigem() {
+		return versaoOrigem;
+	}
+	public void setVersaoOrigem(int versaoOrigem) {
+		this.versaoOrigem = versaoOrigem;
+	}
+	public Tela(int idTela, int idVersao, Date dataCadastro, String nomeTela, String imagem, boolean situacao,
+			int telaPai, int ordem, String urlog, int versaoOrigem) {
+		super();
+		this.idTela = idTela;
+		this.idVersao = idVersao;
+		this.dataCadastro = dataCadastro;
+		this.nomeTela = nomeTela;
+		this.imagem = imagem;
+		this.situacao = situacao;
+		this.telaPai = telaPai;
+		this.ordem = ordem;
+		this.urlog = urlog;
+		this.versaoOrigem = versaoOrigem;
+	}
+	
+	
 	
 	
 }
