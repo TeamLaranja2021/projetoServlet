@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+<meta charset="utf-8">
+<title>Projetos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Criar uma nova Requisicao</h1>
+		<form name="frmRequisicao" action="insertRequisicao">
+		<table>
+			<tr>
+				<td><input type="text" name="idEvento" placeholder="Id da evento"
+					class="Caixa1"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="urlHomolog" placeholder="urlHomolog"
+					class="Caixa2"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="uriProd" placeholder="uriProd"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="descricao" placeholder="Descricao"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="requisicaoPai" placeholder="requisicao Pai"
+					class="Caixa2"></td>
+			</tr>
+			
+				<tr>
+				<td><input type="text" name="camada" placeholder="Camada"
+					class="Caixa2"></td>
+			</tr>
+			
+			
+			<tr>
+				<td><input type="text" name="situacao" placeholder="situacao"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="ordem" placeholder="ordem"
+					class="Caixa2"></td>
+			</tr>
+			
+		
+		</table>
+		<input type="button" value="Adicionar Requisicao" class="Botao1"
+			onclick="validarRequisicao()">
+	</form>
+	
+	<script src="scripts/validador.js"></script>
+</body>
+</html>

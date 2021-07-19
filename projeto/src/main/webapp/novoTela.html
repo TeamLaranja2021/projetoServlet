@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+<meta charset="utf-8">
+<title>Projetos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Criar uma nova Tela</h1>
+		<form name="frmTela" action="insertTela">
+		<table>
+			<tr>
+				<td><input type="text" name="idVersao" placeholder="Id da Versao"
+					class="Caixa1"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="dataCadastro" placeholder="data Cadastro"
+					class="Caixa2"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="nomeTela" placeholder="Nome da Tela"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="imagem" placeholder="Imagem da tela"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="situacao" placeholder="Situacao"
+					class="Caixa2"></td>
+			</tr>
+			
+				<tr>
+				<td><input type="text" name="telaPai" placeholder="Numero da Tela pai"
+					class="Caixa2"></td>
+			</tr>
+			
+			
+			<tr>
+				<td><input type="text" name="ordem" placeholder="Ordem"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="urlog" placeholder="URLOG"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="versaoOrigem" placeholder="Numero da Versao original "
+					class="Caixa2"></td>
+			</tr>
+		</table>
+		<input type="button" value="Adicionar Tela" class="Botao1"
+			onclick="validarTela()">
+	</form>
+	
+	<script src="scripts/validador.js"></script>
+</body>
+</html>

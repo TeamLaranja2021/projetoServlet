@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+<meta charset="utf-8">
+<title>Projetos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Criar uma nova Propriedade</h1>
+		<form name="frmPropriedade" action="insertPropriedade">
+		<table>
+			<tr>
+				<td><input type="text" name="idRequisicao" placeholder="Id da Requisicao"
+					class="Caixa1"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="tipoPropriedade" placeholder="Tipo da propriedade"
+					class="Caixa2"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="chave" placeholder="chave"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="valor" placeholder="valor"
+					class="Caixa2"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="ordem" placeholder="ordem"
+					class="Caixa2"></td>
+			</tr>
+			
+	
+		</table>
+		<input type="button" value="Adicionar propriedade" class="Botao1"
+			onclick="validarPropriedade()">
+	</form>
+	
+	<script src="scripts/validador.js"></script>
+</body>
+</html>

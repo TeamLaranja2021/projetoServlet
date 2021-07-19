@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+<meta charset="utf-8">
+<title>Eventos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Criar uma novo Evento</h1>
+		<form name="frmEvento" action="insertEvento">
+		<table>
+			<tr>
+				<td><input type="text" name="idTela" placeholder="Id da Tela"
+					class="Caixa1"></td>
+			</tr>
+	
+			<tr>
+				<td><input type="text" name="situacao" placeholder="Situacao"
+					class="Caixa2"></td>
+			</tr>
+			
+				<tr>
+				<td><input type="text" name="ordem" placeholder="Ordem"
+					class="Caixa2"></td>
+			</tr>
+			
+				<tr>
+
+				
+				<td><input type="text" name="parametros" placeholder="Parametros"
+					class="Caixa2"></td>
+			</tr>
+		
+	
+		</table>
+		<input type="button" value="Adicionar Evento" class="Botao1"
+			onclick="validarEvento()">
+	</form>
+	
+	<script src="scripts/validador.js"></script>
+</body>
+</html>
