@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastrar Versão</title>
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/alterar_tela.css">
+</head>
+
+<body>
+	<section id="novo-projeto">
+		<h1>Cadastrar Versão</h1>
+		<form name="frmVersao" action="insertVersao">
+			<div class="form-control">
+				<input class="entrada" type="text" placeholder="id do projeto" name="idProjeto">
+			</div>
+			<div class="form-control">
+				<input class="entrada" type="text" placeholder="Número de GMUD" name="GMUD">
+			</div> 
+			<div class="form-control">
+				<input type="text" name="descricao" placeholder="Descrição"
+					class="entrada">
+			</div>
+			<div class="form-control">
+				<input class="entrada" type="text" placeholder="situação" name="situacao"> 
+			</div>
+			<div class="form-control">
+				<input class="entrada" type="text" id="url"
+						placeholder="Data de lançamento" name="dataLancamento">
+			</div> 
+			<div class="form-control">
+				<input class="entrada" type="text" placeholder="Ordem" name="ordem"> 
+			</div>
+			<div class="form-control">
+				<input class="entrada" type="text" placeholder="Número da versão" name="numeroVersao"> 
+			</div>
+			<div class="form-control">
+				<a href="dashboard-version.html"class="button"id="cancelar"> Cancelar</a>
+			
+				<input type="button" class="button" value="OK" onclick="validarVersao()">
+			
+			</div>
+		</form>
+		<script src="scripts/validador.js"></script>
+	</section>
+</body>
+
+</html>

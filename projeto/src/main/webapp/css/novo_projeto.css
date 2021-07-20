@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color:white;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.entrada {
+    width: 300px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    color: black;
+
+}
+
+.entrada::placeholder {
+    color:black;
+}
+.entrada:focus {
+    outline: none;
+}
+section#novo-projeto {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: 450px;
+    background: #C4C4C4;
+    border-radius: 40px;
+    color: black;
+    box-shadow: 0 10px 0 0 #848282;
+}
+
+section#novo-projeto h1 {
+    background: #467DDF;
+    font-size: 40px;
+    border-radius: 15px ;
+    padding: 50px;
+    margin: 0;
+    color:white;
+    text-align: center;
+}
+
+section#novo-projeto form {
+    padding: 30px 0;
+}
+
+section#novo-projeto form .form-control {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+section#novo-projeto form .form-control textarea {
+    min-height: 100px;
+}
+.button {
+    padding: 15px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    background-color: #61AB28;
+    transition: all 0.3s;
+}
+#cancelar{
+    background-color: #DC6418;
+   }

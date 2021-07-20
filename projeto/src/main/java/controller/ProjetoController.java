@@ -53,7 +53,7 @@ public class ProjetoController extends HttpServlet {
 		ArrayList<Projeto> lista = dao.listarProjetos();
 		
 		request.setAttribute("projeto", lista);
-		RequestDispatcher rd = request.getRequestDispatcher("listarProjeto.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("dashboard_projeto.jsp");
 		rd.forward(request, response);//encaminha para lista
 		
 	}
@@ -85,7 +85,7 @@ public class ProjetoController extends HttpServlet {
 		request.setAttribute("nomeProjeto", projeto.getNomeProjeto());
 		request.setAttribute("situacao", projeto.isSituacao());
 	
-		RequestDispatcher rd = request.getRequestDispatcher("EditarProjeto.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("alterar_projeto.jsp");
 		rd.forward(request, response);
 	}
 	
