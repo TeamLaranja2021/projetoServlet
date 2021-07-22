@@ -7,9 +7,9 @@ public class ConnectionFactory {
 
 	
 	private static final String driver = "com.mysql.cj.jdbc.Driver";
-	private static final String url = "jdbc:mysql://127.0.0.1:3306/projeto_documentacao?useTimezone=true&serverTimezone=UTC";
+	private static final String url = "jdbc:mysql://localhost:3306/projeto_documentacao?useTimezone=true&serverTimezone=UTC";
 	private static final String user = "root";
-	private static final String password = "rot";
+	private static final String password = "root";
 	
 //metodo de conexao
 	public static Connection getConectar() {

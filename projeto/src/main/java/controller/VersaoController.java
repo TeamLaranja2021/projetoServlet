@@ -53,7 +53,7 @@ public class VersaoController extends HttpServlet {
 		ArrayList<Versao> lista = versaodao.listarVersao();
 				
 		request.setAttribute("versao", lista);
-		RequestDispatcher rd = request.getRequestDispatcher("listarVersao.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("dashboard_versao.jsp");
 		rd.forward(request, response);//encaminha para lista
 		
 	}
@@ -95,7 +95,7 @@ public class VersaoController extends HttpServlet {
 		request.setAttribute("ordem", versao.getOrdem());
 		request.setAttribute("numeroVersao", versao.getNumeroVersao());
 		
-		RequestDispatcher rd = request.getRequestDispatcher("EditarVersao.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("alterar_versao.jsp");
 		rd.forward(request, response);
 	}
 	
