@@ -64,9 +64,9 @@ public class RequisicaoController extends HttpServlet {
  			requisicao.setUriProd(request.getParameter("uriProd"));
  			requisicao.setDescricao(request.getParameter("descricao"));
  			requisicao.setRequisicaoPai(Integer.parseInt(request.getParameter("requisicaoPai")));
- 			requisicao.setDescricao(request.getParameter("camada"));
+ 			requisicao.setCamada(request.getParameter("camada"));
  			requisicao.setSituacao(Boolean.parseBoolean(request.getParameter("situacao")));
- 	
+ 			requisicao.setIdEvento(Integer.parseInt(request.getParameter("ordem")));
  			//invocar o metodo inserir projeto
  			requisicaodao.inserirRequisicao(requisicao);
  			

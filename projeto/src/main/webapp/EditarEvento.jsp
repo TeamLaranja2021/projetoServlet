@@ -17,7 +17,7 @@
 			</tr> 
 			
 			<tr>
-				<td><input type="text" name="idTela" class="Caixa2" readonly
+				<td><input type="text" name="idTela" class="Caixa2" 
 					value="<%out.print(request.getAttribute("idTela"));%>"></td>
 			</tr> 
 			

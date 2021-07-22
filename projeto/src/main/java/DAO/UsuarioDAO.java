@@ -13,7 +13,7 @@ public class UsuarioDAO {
 	//CRUD - Create Usuario
 	public void inserirUsuario(Usuario usuario) {
 		
-		String create = "insert into usuario (nome , email, senha, cargo) values(?,?,? , ?)";
+		String create = "insert into usuario (nome , email, senha, cargo) values(?,?,?,?)";
 		
 		try {
 			//abrir conexao

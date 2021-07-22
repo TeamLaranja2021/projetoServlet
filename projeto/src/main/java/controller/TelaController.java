@@ -49,7 +49,6 @@ public class TelaController extends HttpServlet {
 	}
 	
 	
-	
 	//lista
 	protected void Telas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Tela> lista = teladao.listarTela();

@@ -21,7 +21,7 @@ public class EventoDAO {
 			//Prepar a query no banco de dados
 			PreparedStatement pst = con.prepareStatement(createEvento);
 			//subtituir os paramentos (?) pelas variaveis
-			pst.setInt(1, evento.getIdEvento());
+			pst.setInt(1, evento.getIdTela());
 			pst.setBoolean(2, evento.isSituacao());
 			pst.setInt(3, evento.getOrdem());
 			pst.setString(4, evento.getParametros());

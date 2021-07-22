@@ -10,7 +10,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>Listagem de Versao</title>
+<title>Listagem de Tela</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
