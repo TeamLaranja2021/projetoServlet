@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nova Requisição</title>
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/alterar_tela.css">
+</head>
+
+<body>
+	<section id="novo-projeto">
+		<h1>Nova Requisição</h1>
+		<form name="frmRequisicao" action="insertRequisicao">
+			<div class="form-control">
+				<input type="text" name="idEvento" placeholder="Id do evento"
+					class="entrada">
+				<input type="text" name="urlHomolog" placeholder="urlHomolog"
+					class="entrada">
+			</div>
+			<div class="form-control">
+				<input type="text" name="uriProd" placeholder="uriProd"
+					class="entrada">
+				<input type="text" name="descricao" placeholder="Descricao"
+					class="entrada">
+			</div>
+			<div class="form-control">
+				<input type="text" name="requisicaoPai" placeholder="requisicao Pai"
+					class="entrada">
+			</div> 
+			<div class="form-control">
+				<input type="text" name="camada" placeholder="Camada"
+					class="entrada"> 
+			</div>
+			<div class="form-control">
+				<input type="text" name="situacao" placeholder="situacao"
+					class="entrada"> 
+			</div>
+			<div class="form-control">
+				<input type="text" name="ordem" placeholder="ordem"
+					class="entrada">
+			</div>
+			<div class="form-control">
+				<a href="requisicao"class="button"id="cancelar"> Cancelar</a>
+			
+				<input type="button" class="button" value="OK" onclick="validarRequisicao()">
+			
+			</div>
+		</form>
+		<script src="scripts/validador.js"></script>
+	</section>
+</body>
+
+</html>

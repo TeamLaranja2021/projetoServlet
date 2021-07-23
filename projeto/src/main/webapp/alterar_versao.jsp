@@ -44,7 +44,7 @@
 				<input class="entrada" type="text" placeholder="Número da versão" name="numeroVersao" value="<%out.print(request.getAttribute("numeroVersao"));%>"> 
 			</div> 
 			<div class="form-control">
-				<a href="dashboard_versao.jsp"class="button"id="cancelar"> Cancelar</a>
+				<a href="versao"class="button"id="cancelar"> Cancelar</a>
 			
 				<input type="button" class="button" value="OK" onclick="validarVersao()">
 			

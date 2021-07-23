@@ -51,7 +51,7 @@ public class RequisicaoController extends HttpServlet {
  			ArrayList<Requisicao> lista = requisicaodao.listarRequisicao();
  					
  			request.setAttribute("requisicao", lista);
- 			RequestDispatcher rd = request.getRequestDispatcher("listarRequisicao.jsp");
+ 			RequestDispatcher rd = request.getRequestDispatcher("dashboard_requisicoes.jsp");
  			rd.forward(request, response);//encaminha para lista
  			
  		}
@@ -93,7 +93,7 @@ public class RequisicaoController extends HttpServlet {
  			request.setAttribute("situacao", requisicao.isSituacao());
  			request.setAttribute("ordem", requisicao.getOrdem());
  			
- 			RequestDispatcher rd = request.getRequestDispatcher("EditarRequisicao.jsp");
+ 			RequestDispatcher rd = request.getRequestDispatcher("alterar_requisicao.jsp");
  			rd.forward(request, response);
  		}
  		

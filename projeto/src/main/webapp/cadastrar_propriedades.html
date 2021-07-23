@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nova Propriedade</title>
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/alterar_tela.css">
+</head>
+
+<body>
+	<section id="novo-projeto">
+		<h1>Nova Propriedade</h1>
+		<form name="frmPropriedade" action="insertPropriedade">
+			<div class="form-control">
+				<input type="text" name="idRequisicao" placeholder="Id da Requisicao"
+					class="entrada">
+			</div>
+			<div class="form-control">
+				<input type="text" name="tipoPropriedade" placeholder="Tipo da propriedade"
+					class="entrada">
+			</div> 
+			<div class="form-control">
+				<input type="text" name="chave" placeholder="chave"
+					class="entrada">
+			</div>
+			<div class="form-control">
+				<input type="text" name="valor" placeholder="valor"
+					class="entrada"> 
+			</div>
+			<div class="form-control">
+				<input type="text" name="ordem" placeholder="ordem"
+					class="entrada">
+			</div>
+			<div class="form-control">
+				<a href="propriedade"class="button"id="cancelar"> Cancelar</a>
+			
+				<input type="button" class="button" value="OK" onclick="validarPropriedade()">
+			</div>
+		</form>
+		<script src="scripts/validador.js"></script>
+	</section>
+</body>
+
+</html>

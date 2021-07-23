@@ -19,7 +19,6 @@ public class ConnectionFactory {
 			con = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
 			System.out.println(e);
-			
 		}
 		return con;
 	}

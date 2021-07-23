@@ -38,16 +38,24 @@
                 <div id="projects_list" class="container-list">
                     <div id="table_list_header">
 						<div id="table_header_buttons" class="table-header-buttons-div">
+						<div id="add_div" class="table-header-buttons-div">
+							<div class="">
+								<p>
+									<h1>Projeto</h1>
+								</p>
+							</div><br>
+                        
+							<!-- <button id="add-button" class="add-button">
+                                <a href="cadastrar_projeto.html">+</a>
+                            </button> -->
+						</div>
 						<div id="slider_div" class="table-header-div">
-							<p>Mostar apenas ativos</p>
-							<label id="slider_label" class="switch">
-								<input id="slider_input" type="checkbox">
-								<span id="slider_span" class="slider"></span>
-							</label>
+							<p>Cadastrar Projeto</p>
+							<a href="cadastrar_projeto.html" class="add-button">+</a>
 						</div>
 						<div id="add_div" class="table-header-div">
-							<p>Cadastrar</p>
-                            <a href="cadastrar_projeto.html" class="add-button">+</a>
+							<p>Versão</p>
+                            <a href="versao" class="add-button">+</a>
 							<!-- <button id="add-button" class="add-button">
                                 <a href="cadastrar_projeto.html">+</a>
                             </button> -->

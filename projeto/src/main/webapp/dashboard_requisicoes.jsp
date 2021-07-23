@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="model.Versao"%>
+<%@ page import="model.Requisicao"%>
 <%@ page import="java.util.ArrayList"%>
 <%
-	ArrayList<Versao> lista = (ArrayList<Versao>) request.getAttribute("versao");
+	ArrayList<Requisicao> lista = (ArrayList<Requisicao>) request.getAttribute("requisicao");
 %>
 <!DOCTYPE html>
 <html lang="pt-BR"><head>
@@ -42,7 +42,7 @@
 						<div id="add_div" class="table-header-buttons-div">
 							<div class="">
 								<p>
-									<h1>Versões</h1>
+									<h1>Requisições</h1>
 								</p>
 							</div><br>
                         
@@ -51,12 +51,15 @@
                             </button> -->
 						</div>
 						<div id="slider_div" class="table-header-div">
-							<p>Cadastrar versão</p>
-							<a href="cadastrar_versao.html" class="add-button">+</a>
+							<p>Cadastrar Requisição</p>
+							<a href="cadastrar_requisicao.html" class="add-button">+</a>
 						</div>
 						<div id="add_div" class="table-header-div">
-							<p>Tela</p>
-							<a href="tela" class="add-button">+</a>
+							<p>Propriedades</p>
+                            <a href="propriedade" class="add-button">+</a>
+							<!-- <button id="add-button" class="add-button">
+                                <a href="cadastrar_projeto.html">+</a>
+                            </button> -->
 						</div>
                         <div id="selected_project_div" class="table-header-div" style="display: block;">
                             <a href="main"><span id="selected_project_close" class="close" style="color: rgb(70, 125, 223);">×</span></a>
@@ -69,14 +72,15 @@
                     <div id="table_list">
 						<table id="projects_table">
 							<tr id="version_table_row">
-								<th id="version-header">Núm. da versão</th>
-								<th id="version-header">ID</th>
-								<th id="date-header">Projeto</th>
-								<th id="gmud-header">Data</th>
-								<th id="functions-header">GMUD</th>
-								<th id="functions-header">Ordem</th>
-								<th id="date-header">Descrição</th>
-								<th id="active-header">Situacão</th>
+								<th id="version-header">ID. Req</th>
+								<th id="version-header">ID. Evento</th>
+								<th id="date-header">URL</th>
+								<th id="gmud-header">URIProd</th>
+								<th id="gmud-header">Descricao</th>
+								<th id="functions-header">Req. Pai</th>
+								<th id="functions-header">Camada</th>
+								<th id="date-header">Situação</th>
+								<th id="active-header">Ordem</th>
 								
 							</tr>
 							<%
@@ -85,26 +89,27 @@
                             <tr class="project-row">
                                 <td>
                                     <div style="display: flex;">
-                                        <a href="selectVersao?idVersao=<%=lista.get(i).getIdVersao()%>"
+                                        <a href="selectRequisicao?idRequisicao=<%=lista.get(i).getIdRequisicao()%>"
 										class="">
                                             <img width="20" height="20" src="imagens/edit.png" alt="Editar" style="margin-right: 10px;">
                                         </a>
-                                        <a href="javascript: confirmarVersao(<%=lista.get(i).getIdVersao()%>)"
+                                        <a href="javascript: confirmarRequisicao(<%=lista.get(i).getIdRequisicao()%>)"
 										class="">
                                             <img width="20" height="20" src="imagens/delete.png" alt="Deletar" style="margin-right: 10px;">
                                         </a>
                                         <a href="dashboard-screen.html">
-                                            <p style="margin-left: 10px;"><%=lista.get(i).getNumeroVersao()%></p>
+                                            <p style="margin-left: 10px;"><%=lista.get(i).getIdRequisicao()%></p>
                                         </a>
                                     </div>
                                 </td>
-                                <td><%=lista.get(i).getIdVersao()%></td>
-                                <td><%=lista.get(i).getIdProjeto()%></td>                         
-                                <td><%=lista.get(i).getDataLancamento()%></td>
-                                <td><%=lista.get(i).getGMUD()%></td>
-                                <td><%=lista.get(i).getOrdem()%></td>
-                                <td><%=lista.get(i).getDescricao()%></td>
-                                <td><%=lista.get(i).isSituacao()%></td>
+								<td><%=lista.get(i).getIdEvento()%></td>
+								<td><%=lista.get(i).getUrlHomolog()%></td>
+								<td><%=lista.get(i).getUriProd()%></td>
+								<td><%=lista.get(i).getDescricao()%></td>
+								<td><%=lista.get(i).getRequisicaoPai()%></td>
+								<td><%=lista.get(i).getCamada()%></td>
+								<td><%=lista.get(i).isSituacao()%></td>
+								<td><%=lista.get(i).getOrdem()%></td>
                             </tr>
                             <%
 								}

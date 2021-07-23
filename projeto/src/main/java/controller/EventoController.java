@@ -49,7 +49,7 @@ public class EventoController extends HttpServlet {
 		ArrayList<Evento> lista = eventodao.listarEvento();
 				
 		request.setAttribute("evento", lista);
-		RequestDispatcher rd = request.getRequestDispatcher("listarEvento.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("dashboard_evento.jsp");
 		rd.forward(request, response);//encaminha para lista
 		
 	}
@@ -87,7 +87,7 @@ public class EventoController extends HttpServlet {
 		request.setAttribute("parametros", evento.getParametros());
 	
 		
-		RequestDispatcher rd = request.getRequestDispatcher("EditarEvento.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("alterar_evento.jsp");
 		rd.forward(request, response);
 	}
 	

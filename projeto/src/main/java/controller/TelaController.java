@@ -54,7 +54,7 @@ public class TelaController extends HttpServlet {
 		ArrayList<Tela> lista = teladao.listarTela();
 		
 		request.setAttribute("tela", lista);
-		RequestDispatcher rd = request.getRequestDispatcher("listarTela.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("dashboard_tela.jsp");
 		rd.forward(request, response);//encaminha para lista
 	}
 	
@@ -102,7 +102,7 @@ public class TelaController extends HttpServlet {
 		request.setAttribute("urlog", tela.getUrlog());
 		request.setAttribute("versaoOrigem", tela.getVersaoOrigem());
 		
-		RequestDispatcher rd = request.getRequestDispatcher("EditarTela.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("alterar_tela.jsp");
 		rd.forward(request, response);
 	}
 	

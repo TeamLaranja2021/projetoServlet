@@ -49,7 +49,7 @@ public class PropriedadeController extends HttpServlet {
 				ArrayList<Propriedade> lista = propriedadeDAO.listarPropriedade();
 				
 				request.setAttribute("propriedade", lista);
-				RequestDispatcher rd = request.getRequestDispatcher("listarPropriedade.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("dashboard_propriedade.jsp");
 				rd.forward(request, response);//encaminha para lista
 			}
 	
@@ -86,7 +86,7 @@ public class PropriedadeController extends HttpServlet {
 				request.setAttribute("valor", propriedade.getValor());
 				request.setAttribute("ordem", propriedade.getOrdem());
 				
-				RequestDispatcher rd = request.getRequestDispatcher("EditarPropriedade.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("alterar_propriedades.jsp");
 				rd.forward(request, response);
 			}
 

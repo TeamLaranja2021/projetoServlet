@@ -32,7 +32,7 @@
 			</div>
 			
 			<div class="form-control">
-				<a href="alterar_projeto.html" class="button"id="cancelar" >Cancelar</a>
+				<a href="main" class="button"id="cancelar" >Cancelar</a>
 
 				<input type="button" value="OK" class="button"
 			onclick="validar()">

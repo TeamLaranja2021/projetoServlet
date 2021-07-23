@@ -52,7 +52,7 @@ public class UsuarioController extends HttpServlet {
 		ArrayList<Usuario> lista = usuariodao.listarUsuario();
 		
 		request.setAttribute("usuario", lista);
-		RequestDispatcher rd = request.getRequestDispatcher("listarUsuario.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("informacao_usuario.jsp");
 		rd.forward(request, response);
 	}
 	
@@ -84,7 +84,7 @@ public class UsuarioController extends HttpServlet {
 		request.setAttribute("email", usuario.getEmail());
 		request.setAttribute("cargo", usuario.getCargo());
 	
-		RequestDispatcher rd = request.getRequestDispatcher("EditarUsuario.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("alterar_usuario.jsp");
 		rd.forward(request, response);
 	}
 	

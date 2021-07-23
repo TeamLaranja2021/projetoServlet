@@ -1,17 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="model.Versao"%>
+<%@ page import="model.Usuario"%>
 <%@ page import="java.util.ArrayList"%>
 <%
-	ArrayList<Versao> lista = (ArrayList<Versao>) request.getAttribute("versao");
+	ArrayList<Usuario> lista = (ArrayList<Usuario>) request.getAttribute("usuario");
 %>
-<!DOCTYPE html>
 <html lang="pt-BR"><head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Roboto+Slab:700|Roboto:400,400i" rel="stylesheet">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="./css/styles.css">
         <title> Home -  Mobicare</title>
     </head>
 
@@ -42,7 +41,7 @@
 						<div id="add_div" class="table-header-buttons-div">
 							<div class="">
 								<p>
-									<h1>Versões</h1>
+									<h1>Informações do Usuário</h1>
 								</p>
 							</div><br>
                         
@@ -50,67 +49,59 @@
                                 <a href="cadastrar_projeto.html">+</a>
                             </button> -->
 						</div>
-						<div id="slider_div" class="table-header-div">
-							<p>Cadastrar versão</p>
-							<a href="cadastrar_versao.html" class="add-button">+</a>
+						<div id="add_div" class="table-header-div">
+							<p>Cadastrar Usuario</p>
+                            <a href="cadastrar_usuario.html" class="add-button">+</a>
+							<!-- <button id="add-button" class="add-button">
+                                <a href="cadastrar_projeto.html">+</a>
+                            </button> -->
 						</div>
 						<div id="add_div" class="table-header-div">
-							<p>Tela</p>
-							<a href="tela" class="add-button">+</a>
+							<p>Página de projetos</p>
+                            <a href="main" class="add-button">folder</a>
+							<!-- <button id="add-button" class="add-button">
+                                <a href="cadastrar_projeto.html">+</a>
+                            </button> -->
 						</div>
-                        <div id="selected_project_div" class="table-header-div" style="display: block;">
-                            <a href="main"><span id="selected_project_close" class="close" style="color: rgb(70, 125, 223);">×</span></a>
-                            <p>DevSchool 2.0</p>
-                        </div>
+							<div id="selected_project_div" class="table-header-div" style="display: none;">
+							<span id="selected_project_close" class="close" style="color: rgb(70, 125, 223);">×</span>
+							<p>Project Nº 1069384</p>
+						</div>
 						<div id="selected_version_div" class="table-header-div" style="display: none;"><span id="selected_version_close" class="close" style="color: rgb(70, 125, 223);">×</span><p></p></div></div></div>
                     <div>
                         <input id="search-input" type="text" class="search-input" placeholder="Busca...">
                     </div>
                     <div id="table_list">
 						<table id="projects_table">
-							<tr id="version_table_row">
-								<th id="version-header">Núm. da versão</th>
-								<th id="version-header">ID</th>
-								<th id="date-header">Projeto</th>
-								<th id="gmud-header">Data</th>
-								<th id="functions-header">GMUD</th>
-								<th id="functions-header">Ordem</th>
-								<th id="date-header">Descrição</th>
-								<th id="active-header">Situacão</th>
-								
+							<tr id="projects_table_row" style="display: contents">
+								<th id="header_name">ID/Nome</th>
+								<th id="header_active" style="width: 10%; text-align: center;">Senha</th>
+								<th id="version-header">Email</th>
+								<th id="date-header">Cargo</th>
 							</tr>
-							<%
+							<tr id="version_table_row" style="display: none">
+								<th id="version-header">Senha</th>
+								<th id="date-header">Cargo</th>
+							</tr>
+                            <%
 								for (int i = 0; i < lista.size(); i++) {
 							%>
-                            <tr class="project-row">
+                            <tr id="project_row01" class="project-row">
                                 <td>
                                     <div style="display: flex;">
-                                        <a href="selectVersao?idVersao=<%=lista.get(i).getIdVersao()%>"
-										class="">
-                                            <img width="20" height="20" src="imagens/edit.png" alt="Editar" style="margin-right: 10px;">
-                                        </a>
-                                        <a href="javascript: confirmarVersao(<%=lista.get(i).getIdVersao()%>)"
-										class="">
-                                            <img width="20" height="20" src="imagens/delete.png" alt="Deletar" style="margin-right: 10px;">
-                                        </a>
-                                        <a href="dashboard-screen.html">
-                                            <p style="margin-left: 10px;"><%=lista.get(i).getNumeroVersao()%></p>
-                                        </a>
+                                    	<a href="selectUser?idUsuario=<%=lista.get(i).getIdUsuario()%>"
+										class=""><img width="20" height="20" src="imagens/edit.png" alt="Editar" style="margin-right: 10px;"></a>                                                             
+                                        <p style="margin-left: 10px;"><%=lista.get(i).getIdUsuario()%></p>
+                                        <p style="margin-left: 10px;"><%=lista.get(i).getNome()%></p>
                                     </div>
                                 </td>
-                                <td><%=lista.get(i).getIdVersao()%></td>
-                                <td><%=lista.get(i).getIdProjeto()%></td>                         
-                                <td><%=lista.get(i).getDataLancamento()%></td>
-                                <td><%=lista.get(i).getGMUD()%></td>
-                                <td><%=lista.get(i).getOrdem()%></td>
-                                <td><%=lista.get(i).getDescricao()%></td>
-                                <td><%=lista.get(i).isSituacao()%></td>
+                                <td><span class=""><%=lista.get(i).getEmail()%></span></td>
+                                <td><span class=""><%=lista.get(i).getSenha()%></span></td>
+                                <td><span class=""><%=lista.get(i).getCargo()%></span></td>
                             </tr>
                             <%
 								}
-							%>
-                         
-                            
+							%>                  
 						</table>
 					</div>
 					<div id="page-div" class="page-div">
